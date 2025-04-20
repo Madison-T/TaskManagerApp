@@ -73,6 +73,7 @@ namespace TaskManagerApp.Controllers
             }
 
             _context.Tasks.Remove(task);
+            await _context.SaveChangesAsync();
             return NoContent();
         }
 
