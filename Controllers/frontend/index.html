@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task Manager App</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Task Manager</h1>
+        </header>
+
+        <main>
+            <section id="loading-section" style="display: none; text-align: center; margin-bottom: 20px;">
+                <p id="loading-spinner">Loading tasks...</p>
+            </section>
+            <section id="task-form-section">
+                <form id="task-form">
+                    <input type="text" id="title" placeholder="Task title" required>
+                    <input type="text" id="description" placeholder="Task description" required>
+                    <button type="submit">Add Task</button>
+                </form>
+                <div id="message" style="margin-top: 10px;"></div>
+            </section>
+
+            <section id="task-list-section">
+                <ul id="task-list">
+                    <!-- Tasks will be dynamically added here -->
+                </ul>
+            </section>
+        </main>
+
+        <script src="app.js"></script>
+    </body>
+</html>
