@@ -1,0 +1,78 @@
+/* Reset some default styling */
+body, h1, u1, li, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10 px;
+    margin-bottom: 20px;
+}
+
+#task-form input, #task-form button {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+#task-list {
+    list-style: none;
+}
+
+.task-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}
+
+/* Mobile-friendly */
+@media (max-width: 600px) {
+    #task-form {
+        flex-direction: column;
+    }
+
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
