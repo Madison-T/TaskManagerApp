@@ -1,12 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 using TaskManagerApp.Data;
+using DotNetEnv;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Load environment variables from .env
+Env.Load();
+
+// Get the DB connection string
+var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
+
+// Configure EF Core with Npgsql and the connection string
+builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
